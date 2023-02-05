@@ -20,8 +20,8 @@ public record HexSettings(double biomeScale, double hexSize, double hexBorderThr
 {
     private static final Map<ResourceLocation, HexSettings> DEFAULTS = new Object2ObjectOpenHashMap<>();
     private static final Codec<HexSettings> DIRECT_CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Codec.doubleRange(0.01, 1000).optionalFieldOf("biome_scale", 8d).forGetter(c -> c.biomeScale),
-            Codec.doubleRange(1, 1000).optionalFieldOf("hex_size", 40d).forGetter(c -> c.hexSize),
+            Codec.doubleRange(0.01, 1000).optionalFieldOf("biome_scale", 6d).forGetter(c -> c.biomeScale),
+            Codec.doubleRange(1, 1000).optionalFieldOf("hex_size", 120d).forGetter(c -> c.hexSize),
             Codec.doubleRange(0, 1).optionalFieldOf("hex_border_threshold", 0.92d).forGetter(c -> c.hexBorderThreshold),
             BorderSettings.CODEC.optionalFieldOf("top_border").forGetter(c -> c.topBorder),
             BorderSettings.CODEC.optionalFieldOf("bottom_border").forGetter(c -> c.bottomBorder)
